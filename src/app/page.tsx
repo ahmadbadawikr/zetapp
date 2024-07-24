@@ -1,7 +1,16 @@
-import Image from "next/image";
+import React, { ReactNode } from 'react';
 
-export default function Home() {
+type MaxWidthWrapperProps = {
+  className?: string;
+  children: ReactNode;
+};
+
+const MaxWidthWrapper: React.FC<MaxWidthWrapperProps> = ({ className, children }) => {
   return (
-    <div></div>
-  )
-}
+    <div className={className}>
+      {children}
+    </div>
+  );
+};
+
+export default MaxWidthWrapper;
