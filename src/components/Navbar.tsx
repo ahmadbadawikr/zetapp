@@ -1,5 +1,8 @@
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import Link from "next/link"
+import { buttonVariants } from "./ui/button"
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/server"
+import { ArrowRight } from "lucide-react"
 
 const Navbar = () => {
     return (
@@ -11,6 +14,38 @@ const Navbar = () => {
                         className="flex z-40 font-semibold">
                         <span>zetapp.</span>
                     </Link>
+                    
+                    {/** to do: add mobile navbar **/}
+
+                    <div className="hidden items-center space-x-4 sm:flex">
+                        <>
+                            <Link 
+                                href='/pricing' 
+                                className={buttonVariants({
+                                    variant: 'ghost',
+                                    size: 'sm'
+                                })}>
+                                Pricing
+                            </Link>
+                            <LoginLink
+                                // href='/login' 
+                                className={buttonVariants({
+                                    variant: 'ghost',
+                                    size: 'sm'
+                                })}>
+                                Sign In
+                            </LoginLink>
+                            <RegisterLink
+                                // href='/register' 
+                                className={buttonVariants({
+                                    size: 'sm'
+                                })}>
+                                Get Started <ArrowRight className="ml-1.5 "></ArrowRight>
+                            </RegisterLink>
+
+                        </>
+                    </div>
+
                 </div>
             </MaxWidthWrapper>
         </nav>
