@@ -49,7 +49,7 @@ const Dashboard = () => {
           My Files
         </h1>
 
-        {/* <UploadButton isSubscribed={subscriptionPlan.isSubscribed} /> */}
+        <UploadButton />
       </div>
 
       {/* display all user files */}
